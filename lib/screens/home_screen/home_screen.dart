@@ -73,20 +73,137 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const Drawer(),
+      drawer: Drawer(
+        child: Container(
+          color: Color(0xffd1ad17),
+          child: ListView(
+            children: [
+              DrawerHeader(
+                child: Row(
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: Colors.white54,
+                      radius: 43,
+                      child: CircleAvatar(
+                        backgroundColor: Colors.red,
+                        radius: 40,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text('Welcome Guest'),
+                        SizedBox(height: 10),
+                        Container(
+                          height: 30,
+                          child: OutlinedButton(
+                            onPressed: null,
+                            child: Text('Login'),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              ListTile(
+                leading: Icon(Icons.home_outlined),
+                title: Text('Home'),
+              ),
+              ListTile(
+                leading: Icon(Icons.shop_outlined),
+                title: Text('Review Cart'),
+              ),
+              ListTile(
+                leading: Icon(Icons.person_outlined),
+                title: Text('My Profile'),
+              ),
+              ListTile(
+                leading: Icon(Icons.notifications_outlined),
+                title: Text('Notification'),
+              ),
+              ListTile(
+                leading: Icon(Icons.star_border_rounded),
+                title: Text('Rating & Review'),
+              ),
+              ListTile(
+                leading: Icon(Icons.favorite_border_outlined),
+                title: Text('Wishlist'),
+              ),
+              ListTile(
+                leading: Icon(Icons.description),
+                title: Text('Raise a complaint'),
+              ),
+              ListTile(
+                leading: Icon(Icons.format_quote_outlined),
+                title: Text('FAQs'),
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 15.0),
+                child: Container(
+                  height: 300.0,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Contact Support',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 15.0,
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            'Call us: ',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          Text('+91 1234567891'),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 5.0,
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            'Mail us: ',
+                            style: TextStyle(fontWeight: FontWeight.w600),
+                          ),
+                          Text('dilip@i-engage.in'),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
       appBar: AppBar(
-        iconTheme: const IconThemeData(
+        iconTheme: IconThemeData(
           color: Colors.black,
         ),
-        title: const Text(
+        title: Text(
           'Home',
           style: TextStyle(
             color: Colors.black,
             fontSize: 17,
           ),
         ),
-        backgroundColor: const Color(0xffd6b738),
-        actions: const [
+        backgroundColor: Color(0xffd6b738),
+        actions: [
           CircleAvatar(
             radius: 12,
             backgroundColor: Color(0xffd4d181),
@@ -110,13 +227,13 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(10),
+        padding: EdgeInsets.all(10),
         child: ListView(
           children: [
             Container(
               height: 200,
               decoration: BoxDecoration(
-                image: const DecorationImage(
+                image: DecorationImage(
                   fit: BoxFit.cover,
                   image: NetworkImage(
                       'https://media.istockphoto.com/photos/vegetarian-food-in-string-bag-picture-id1311051864?k=20&m=1311051864&s=612x612&w=0&h=Y2RT33vB22QtNWFbcRSaesd_D8CEoW1wbR5r4e8rCuk='),
@@ -132,7 +249,7 @@ class HomeScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(
+                          padding: EdgeInsets.only(
                             right: 30.0,
                             bottom: 30.0,
                             left: 10.0,
@@ -170,7 +287,7 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 15),
+                          padding: EdgeInsets.only(left: 15),
                           child: Text(
                             '30% Off',
                             style: TextStyle(
@@ -187,7 +304,7 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        const Padding(
+                        Padding(
                           padding: EdgeInsets.only(
                             left: 15,
                           ),
@@ -209,7 +326,7 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(
+              padding: EdgeInsets.only(
                 top: 15.0,
                 bottom: 15.0,
                 left: 10,
@@ -217,7 +334,7 @@ class HomeScreen extends StatelessWidget {
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                children: [
                   Text('Herbs Seasonings'),
                   Text(
                     'View all',
@@ -240,7 +357,7 @@ class HomeScreen extends StatelessWidget {
             ),
             SizedBox(height: 30),
             Padding(
-              padding: const EdgeInsets.only(
+              padding: EdgeInsets.only(
                 top: 15.0,
                 bottom: 15.0,
                 left: 10,
@@ -248,7 +365,7 @@ class HomeScreen extends StatelessWidget {
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                children: [
                   Text('Fresh Fruits'),
                   Text(
                     'View all',
